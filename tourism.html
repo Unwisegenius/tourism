@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the Grand Valley | Grand Junction, Palisade & Fruita</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Goblin+One&display=swap" rel="stylesheet">
+    
+    <!-- Using Inter as a clean modern fallback for 'Clarity City' if unavailable -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #FFFFFF;
+            --text-color: #100C08; /* Smokey Black */
+            --highlight: #FF6600; /* Frank Ocean Orange */
+            --highlight-hover: #e65c00;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', 'Clarity City', sans-serif; /* Body Font */
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Goblin One', serif; /* Heading Font */
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .subheading, h3 {
+            font-family: 'Crete Round', serif; /* Subheading Font */
+            color: var(--highlight);
+        }
+
+        a {
+            color: var(--highlight);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--highlight-hover);
+            text-decoration: underline;
+        }
+
+        /* Layout & Containers */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 40px 0;
+            border-bottom: 4px solid var(--highlight);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header p.subheading {
+            font-size: 1.2rem;
+            margin-top: -10px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-family: 'Crete Round', serif;
+        }
+
+        /* Hero Image */
+        .hero {
+            width: 100%;
+            height: 50vh;
+            background: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            border-bottom: 4px solid var(--highlight);
+        }
+
+        /* Grid Sections */
+        .section-header {
+            text-align: center;
+            margin: 60px 0 30px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            display: inline-block;
+            border-bottom: 3px solid var(--highlight);
+            padding-bottom: 5px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: #fff;
+            border: 2px solid #eaeaea;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--highlight);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--highlight);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--highlight);
+            padding-left: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--highlight);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 2px;
+            font-family: 'Crete Round', serif;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: var(--highlight-hover);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Travel & Transit Section */
+        .transit-box {
+            background: #f9f9f9;
+            padding: 30px;
+            border-left: 5px solid var(--highlight);
+            margin-bottom: 40px;
+        }
+
+        .transit-box h3 {
+            margin-top: 0;
+            color: var(--text-color);
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer .highlight-text {
+            color: var(--highlight);
+            font-family: 'Crete Round', serif;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>The Grand Valley</h1>
+            <p class="subheading">Grand Junction • Palisade • Fruita</p>
+            <nav>
+                <a href="#sightseeing">Sightseeing</a>
+                <a href="#amenities">Local Amenities</a>
+                <a href="#activities">Activities</a>
+                <a href="#transit">Getting Around</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Fixed Hero Image: Red Rock Canyon Road Trip Vibe -->
+    <div class="hero"></div>
+
+    <div class="container">
+        
+        <!-- SIGHTSEEING -->
+        <div class="section-header" id="sightseeing">
+            <h2>Iconic Sightseeing</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <!-- Fixed Image: Canyon/Monument View -->
+                <img src="https://images.unsplash.com/photo-1504280741564-f65bef8645d8?auto=format&fit=crop&w=800&q=80" alt="Colorado National Monument">
+                <div class="card-content">
+                    <h3>Colorado National Monument</h3>
+                    <p class="meta">📍 Fruita / Grand Junction | 🚗 15 mins from downtown GJ</p>
+                    <p>Experience sheer-walled, red rock canyons along the 23-mile Rim Rock Drive. Watch for bighorn sheep and soaring eagles. Stop at the Independence Monument view point.</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- Fixed Image: Pine Trees and Mountain Lake -->
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80" alt="Mesa Lakes">
+                <div class="card-content">
+                    <h3>Grand Mesa & Mesa Lakes</h3>
+                    <p class="meta">📍 Grand Mesa National Forest | 🚗 45 mins from Palisade</p>
+                    <p>Escape to the largest flat-topped mountain in the world. Features over 300 alpine lakes perfect for fishing, paddleboarding, and brisk, scenic hikes among the pines.</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- Fixed Image: Vineyards -->
+                <img src="https://images.unsplash.com/photo-1553530666-ba11a90a2bf9?auto=format&fit=crop&w=800&q=80" alt="Palisade Vineyards">
+                <div class="card-content">
+                    <h3>Palisade Wine Country</h3>
+                    <p class="meta">📍 Palisade, CO | 🚲 Bikeable routes</p>
+                    <p>Colorado's peach and wine capital. Rent a cruiser bike and ride along the Fruit & Wine Byway, taking in the dramatic Book Cliffs right behind the vineyards.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- AMENITIES -->
+        <div class="section-header" id="amenities">
+            <h2>Local Amenities & Spots</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <!-- Fixed Image: Brewery/Beer -->
+                <img src="https://images.unsplash.com/photo-1538481199005-271011d7e091?auto=format&fit=crop&w=800&q=80" alt="Local Craft Beer">
+                <div class="card-content">
+                    <h3>Eats & Craft Beer</h3>
+                    <p class="meta">Lunch Spots & Breweries</p>
+                    <p><strong>Near the Monument:</strong> Grab a slice at Hot Tomato in Fruita or a pint at Copper Club Brewing.<br><br>
+                    <strong>Grand Junction:</strong> Rockslide Brew Pub for lunch, or Ramblebine Brewing for hazy IPAs.</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- Fixed Image: Biking/Rentals -->
+                <img src="https://images.unsplash.com/photo-1558980664-ce6960be3275?auto=format&fit=crop&w=800&q=80" alt="Gear Rentals">
+                <div class="card-content">
+                    <h3>Gear Rentals</h3>
+                    <p class="meta">Bikes, SUPs & Outdoor Gear</p>
+                    <p><strong>Fruita:</strong> Over the Edge Sports (Mountain Bikes).<br>
+                    <strong>Palisade:</strong> Rapid Creek Cycles (Cruisers & E-bikes for winery tours).<br>
+                    <strong>Grand Mesa:</strong> Grand Mesa Lodge (SUPs & Canoes).</p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- Fixed Image: Downtown Accommodation -->
+                <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=800&q=80" alt="Accommodation">
+                <div class="card-content">
+                    <h3>Accommodations</h3>
+                    <p class="meta">Where to crash</p>
+                    <p><strong>Boutique:</strong> Spoke and Vine Motel (Palisade), Hotel Maverick (GJ).<br>
+                    <strong>Camping:</strong> Saddlehorn Campground (Inside the Monument) or Highline Lake State Park (Fruita).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRANSIT & TRAVEL -->
+        <div class="section-header" id="transit">
+            <h2>Getting Around</h2>
+        </div>
+        <div class="transit-box">
+            <h3>✈️ Air & 🚂 Train Travel</h3>
+            <p><strong>Grand Junction Regional Airport (GJT):</strong> Daily flights connecting through Denver, Dallas, and Phoenix. Rent a car directly at the terminal for easiest access to the Mesa and Monument.</p>
+            <p><strong>Amtrak California Zephyr:</strong> Stops directly in downtown Grand Junction. One of the most scenic train routes in the US, traveling right alongside the Colorado River.</p>
+            
+            <br>
+            <h3>🚌 Local Transit (GVT) & Biking</h3>
+            <p><strong>Grand Valley Transit (GVT):</strong> Operates bus routes connecting Palisade, Grand Junction, and Fruita. Perfect for getting between downtowns if you aren't driving. Route 11 connects GJ to Fruita, and Route 4 goes to Palisade.</p>
+            <p><strong>Riverfront Trail:</strong> A paved path connecting Palisade all the way to Fruita along the Colorado River. Highly recommended for safe, scenic travel between towns via E-bike.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <h2 style="font-family: 'Goblin One', serif;">See You In The Valley</h2>
+        <p class="highlight-text">Grand Junction | Palisade | Fruita</p>
+        <p style="font-size: 0.8rem; margin-top: 20px; color: #888;">Designed for the sights. Colorado National Monument • Grand Mesa</p>
+    </footer>
+
+</body>
+</html>
